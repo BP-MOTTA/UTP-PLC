@@ -1,0 +1,53 @@
+schema_version: 0.1
+bank:
+  institution: UTP
+  status: validation_in_progress
+
+plc:
+  family: SIMATIC S7-1200
+  model: CPU 1215C
+  order_number: 6ES7215-1AG40-0XB0
+  supply: 24VDC
+  profinet:
+    mac_observed: "28-63-36-FA-13-FC"
+    ip: pending
+  io:
+    digital_inputs: pending_mapping
+    digital_outputs: pending_mapping
+    analog_inputs: pending_mapping
+    analog_outputs: pending_mapping
+
+network_switch:
+  model: SCALANCE XB005
+  order_number: 6GK5005-0BA00-1AB2
+  status: observed
+
+protection:
+  dc_12v:
+    device: Siemens 5SL62 MCB
+    rating: C6
+    poles: 2
+  ac_220v:
+    device: Siemens 5SL62 MCB
+    rating: C6
+    poles: 2
+  ac_220v_3phase:
+    device: Siemens 5SL63 MCB
+    rating: C10
+    poles: 3
+
+motor_dc:
+  rated_voltage: 12V
+  rated_speed_rpm: 500
+  gearbox: "19:1"
+  max_current_a: 5
+  no_load_current_a: 0.3
+  encoder:
+    cpr_marking: 64
+    supply_marking: "3-20VDC"
+    channels: [A, B]
+
+validation_policy:
+  tia_addresses: "Do not treat any address as confirmed until physically validated."
+  wiring: "Store observed terminal-to-terminal mapping only after bench verification."
+  statuses: [confirmed, observed, probable, pending, example]
